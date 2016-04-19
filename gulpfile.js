@@ -5,9 +5,9 @@ var $ = require('gulp-load-plugins')(); // para no requerir todos los plugins de
 var browserSync = require('browser-sync').create();
 
 gulp.task('sass', function(){
-    return gulp.src('app/styles/default.scss')
+    return gulp.src('app/styles/**/*.scss')
+        .pipe($.plumber())
         .pipe($.sourcemaps.init())
-          .pipe($.plumber())
           .pipe($.sass())
           .pipe($.shorthand())
           .pipe($.autoprefixer({ browsers: ['last 2 versions'] }))
@@ -23,6 +23,9 @@ gulp.task('browser-sync', function() {
             baseDir: "./app"
         }
     });
+
+    gulp.watch('app/index.html').on('change', browserSync.reload);
+    gulp.watch('app/styles/**/*.scss', ['sass']);
 });
 
 gulp.task('inject', function () {
@@ -34,7 +37,7 @@ gulp.task('inject', function () {
 
 gulp.task('watch', function(){
     gulp.watch('app/index.html').on('change', browserSync.reload);
-    gulp.watch('app/styles/*.scss', ['sass']);
+    gulp.watch('app/styles/**/*.scss', ['sass']);
 
 });
 

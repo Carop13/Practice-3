@@ -1,0 +1,64 @@
+html {
+  height: 100%; }
+
+body {
+  background: radial-gradient(#5CACEE 2%, #36648B 98%);
+  min-width: 100%;
+  min-height: 100%;
+  font-family: "Helvetica Neue", sans-serif; }
+
+header {
+  width: 100%;
+  text-align: center;
+  color: white; }
+  header h2, header h3 {
+    font-weight: 500; }
+  header span {
+    width: 90%;
+    margin-left: 5%;
+    display: block;
+    border: none;
+    color: white;
+    height: 3px;
+    background: radial-gradient(#ffffff 2%, #5CACEE 20%, #36648B 78%);
+    box-shadow: 2px 2px 2px 0px #36648B; }
+
+section {
+  width: 100%;
+  min-height: 100%;
+  margin: 0px;
+  box-sizing: border-box; }
+  section .doctor-img {
+    width: 100px;
+    height: 100px; }
+  section .first-doctor, section .second-doctor {
+    position: relative;
+    margin: 5%;
+    width: 40%;
+    height: 150px;
+    float: left;
+    box-sizing: border-box;
+    border-top-left-radius: 75px;
+    border-top-right-radius: 75px;
+    border-bottom-right-radius: 75px;
+    border-bottom-left-radius: 75px;
+    box-shadow: 3px 3px 3px 1px #36648B, inset 0 8px 4px -8px rgba(255, 255, 255, 0.7), inset 0 0px 2px rgba(255, 255, 255, 0.5);
+    color: white;
+    padding: 10px; }
+    section .first-doctor img, section .second-doctor img {
+      float: left;
+      height: 100px;
+      border-radius: 50%;
+      border: 2px solid white;
+      margin: 12.5px 10px 10px 10px; }
+    section .first-doctor h2, section .second-doctor h2 {
+      margin-bottom: 5px;
+      font-weight: 500; }
+    section .first-doctor p, section .second-doctor p {
+      margin-top: 5px; }
+  section .first-doctor::after, section .second-doctor::after {
+    position: absolute;
+    top: 2px;
+    box-shadow: inset 1px 1px 1px white; }
+
+/*# sourceMappingURL=default.css.map */
