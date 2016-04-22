@@ -8,9 +8,9 @@ gulp.task('sass', function(){
     return gulp.src('app/styles/**/*.scss')
         .pipe($.plumber())
         .pipe($.sourcemaps.init())
-          .pipe($.sass())
+          .pipe($.sass({errLogToConsole: true}))
           .pipe($.shorthand())
-          .pipe($.autoprefixer({ browsers: ['last 2 versions'] }))
+          .pipe($.autoprefixer("last 1 versions", "> 10%", "ie 9"))
           .pipe($.cssmin())
         .pipe($.sourcemaps.write())
         .pipe(gulp.dest('app/styles/css'))
@@ -24,7 +24,7 @@ gulp.task('browser-sync', function() {
         }
     });
 
-    gulp.watch('app/index.html').on('change', browserSync.reload);
+    gulp.watch('app/**/*.html').on('change', browserSync.reload);
     gulp.watch('app/styles/**/*.scss', ['sass']);
 });
 
@@ -36,7 +36,7 @@ gulp.task('inject', function () {
 });
 
 gulp.task('watch', function(){
-    gulp.watch('app/index.html').on('change', browserSync.reload);
+    gulp.watch('app/**/*.html').on('change', browserSync.reload);
     gulp.watch('app/styles/**/*.scss', ['sass']);
 
 });

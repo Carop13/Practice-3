@@ -29,13 +29,13 @@ header {
     font-family: 'Avenir Next LT Regular', sans-serif;
     font-weight: 100; }
   header span {
-    width: 90%;
-    margin-left: 5%;
+    width: 100%;
+    margin-left: 0%;
     display: block;
     border: none;
     color: white;
     height: 3px;
-    background: radial-gradient(#ffffff 2%, #2D7FB4 20%, #3A5A9C 78%);
+    background: radial-gradient(#ffffff 2%, #2D7FB4 20%, #3A5A9C 70%, transparent 8%);
     box-shadow: 2px 2px 2px 0px #3A5A9C; }
 
 section {
@@ -43,15 +43,20 @@ section {
   min-height: 100%;
   margin: 0px;
   box-sizing: border-box; }
-  section .doctor-img {
-    width: 100px;
-    height: 100px; }
-  section .first-doctor, section .second-doctor {
+  section .doctor-box:first-child {
+    margin-left: 10%;
+    margin-right: 5px; }
+  section .doctor-box:last-child {
+    float: right;
+    margin-right: 10%;
+    margin-left: 5px; }
+  section .doctor-box {
     background-color: #2D7FB4;
     opacity: 0.9;
     position: relative;
-    margin: 5%;
-    width: 40%;
+    margin-top: 5%;
+    width: 35%;
+    min-width: 320px;
     height: 150px;
     float: left;
     box-sizing: border-box;
@@ -59,29 +64,124 @@ section {
     border-top-right-radius: 75px;
     border-bottom-right-radius: 75px;
     border-bottom-left-radius: 75px;
-    box-shadow: 3px 3px 3px 1px #3A5A9C, inset 2px 2px 7px rgba(255, 255, 255, 0.6), inset -2px -2px 7px rgba(255, 255, 255, 0.2);
+    box-shadow: 3px 3px 3px 1px #3A5A9C, inset 2px 2px 7px rgba(255, 255, 255, 0.6), inset -1px -1px 1px rgba(255, 255, 255, 0.2);
     color: white;
     padding: 10px; }
-    section .first-doctor img, section .second-doctor img {
-      float: left;
-      height: 100px;
+    section .doctor-box img {
+      width: 100px;
       border-radius: 50%;
       border: 3px solid white;
-      margin: 12.5px 20px 10px 10px; }
-    section .first-doctor h2, section .second-doctor h2 {
-      font-weight: 700;
+      height: auto;
+      position: absolute;
+      left: 20px;
+      top: 0;
+      bottom: 0;
+      margin: auto; }
+    section .doctor-box .doctor-info {
+      overflow: inherit;
+      margin-left: 150px; }
+      section .doctor-box .doctor-info h2 {
+        font-weight: 700;
+        font-family: 'Avenir Bold', sans-serif;
+        text-shadow: 1px 1px #333;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        margin-left: 0; }
+      section .doctor-box .doctor-info a {
+        font-family: 'Avenir Regular', sans-serif;
+        font-weight: 100;
+        text-shadow: 1px 1px #333;
+        margin-left: 0;
+        text-decoration: none;
+        color: white;
+        display: block;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis; }
+  section .doctor-box:hover {
+    background-color: cornflowerblue; }
+    section .doctor-box:hover a:hover {
+      color: #ddd; }
+
+.align-back-text {
+  display: inline-block;
+  position: relative;
+  margin-left: 80px;
+  min-height: 200px; }
+  .align-back-text .back {
+    width: 80px;
+    height: auto;
+    position: absolute;
+    left: -80px;
+    top: 0;
+    margin: 0; }
+    .align-back-text .back a {
+      position: absolute;
+      color: white;
+      text-decoration: none;
+      top: 15px;
+      right: 15px;
+      font-family: 'Avenir Regular', sans-serif;
+      font-weight: 100; }
+  .align-back-text .title-education {
+    width: 80%;
+    overflow: inherit;
+    text-align: center;
+    text-shadow: #222;
+    margin-left: 10px;
+    padding: 0; }
+    .align-back-text .title-education h2 {
       font-family: 'Avenir Bold', sans-serif;
-      text-shadow: 1px 1px #333; }
-    section .first-doctor p, section .second-doctor p {
+      font-weight: 500;
+      margin-top: 15px !important;
+      margin-bottom: 30px; }
+    .align-back-text .title-education h3 {
       font-family: 'Avenir Regular', sans-serif;
       font-weight: 100;
-      text-shadow: 1px 1px #333; }
-  section .first-doctor:focus, section .second-doctor:focus {
-    border: none; }
-  section .first-doctor:hover {
-    border: none; }
+      color: deepskyblue; }
 
-.chancho {
-  color: white; }
+section {
+  width: 100%;
+  text-align: center;
+  color: white;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  font-family: 'Avenir Bold', sans-serif;
+  font-weight: 500; }
+  section .procedure-box:first-child {
+    margin-left: 10%;
+    margin-right: 5px; }
+  section .procedure-box:last-child {
+    margin-right: 10%;
+    margin-left: 5px;
+    float: right; }
+  section .procedure-box {
+    border: 1px solid transparent;
+    border-radius: 5px;
+    background-color: #2D7FB4;
+    width: 40%;
+    margin: 0;
+    padding: 0;
+    float: left;
+    height: 200px;
+    box-shadow: 2px 2px 2px 1px #3A5A9C, inset 1px 1px 7px white, inset -1px -1px 1px #3A5A9C; }
+    section .procedure-box h2 {
+      width: 100%;
+      height: 100%;
+      margin: 0; }
+
+@media (max-width: 740px) {
+  section {
+    display: block;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100%;
+    box-sizing: border-box; }
+    section .doctor-box, section .procedure-box {
+      width: 80%;
+      min-width: 320px;
+      margin: 5% 10%; } }
 
 /*# sourceMappingURL=default.css.map */
