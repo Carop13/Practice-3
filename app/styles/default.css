@@ -108,7 +108,7 @@ section {
   display: inline-block;
   position: relative;
   margin-left: 80px;
-  min-height: 200px; }
+  min-height: 150px; }
   .align-back-text .back {
     width: 80px;
     height: auto;
@@ -125,11 +125,11 @@ section {
       font-family: 'Avenir Regular', sans-serif;
       font-weight: 100; }
   .align-back-text .title-education {
-    width: 80%;
+    width: calc(100% - 100px);
     overflow: inherit;
     text-align: center;
     text-shadow: #222;
-    margin-left: 10px;
+    padding-left: 10px;
     padding: 0; }
     .align-back-text .title-education h2 {
       font-family: 'Avenir Bold', sans-serif;
@@ -141,7 +141,7 @@ section {
       font-weight: 100;
       color: deepskyblue; }
 
-section {
+section.program-section {
   width: 100%;
   text-align: center;
   color: white;
@@ -149,15 +149,15 @@ section {
   margin: 0;
   padding: 0;
   font-family: 'Avenir Bold', sans-serif;
+  box-sizing: border-box;
   font-weight: 500; }
-  section .procedure-box:first-child {
-    margin-left: 10%;
-    margin-right: 5px; }
-  section .procedure-box:last-child {
-    margin-right: 10%;
-    margin-left: 5px;
+  section.program-section .procedure-box:first-child {
+    margin-left: 5%; }
+  section.program-section .procedure-box:last-child {
+    margin-right: 5%;
     float: right; }
-  section .procedure-box {
+  section.program-section .procedure-box {
+    box-sizing: border-box;
     border: 1px solid transparent;
     border-radius: 5px;
     background-color: #2D7FB4;
@@ -165,23 +165,49 @@ section {
     margin: 0;
     padding: 0;
     float: left;
-    height: 200px;
-    box-shadow: 2px 2px 2px 1px #3A5A9C, inset 1px 1px 7px white, inset -1px -1px 1px #3A5A9C; }
-    section .procedure-box h2 {
+    height: 300px;
+    box-shadow: 2px 2px 2px 1px #3A5A9C, inset 1px 1px 7px white, inset -1px -1px 1px #3A5A9C;
+    display: table; }
+    section.program-section .procedure-box h2 {
       width: 100%;
       height: 100%;
-      margin: 0; }
+      margin: 0;
+      display: table-cell;
+      vertical-align: middle; }
 
-@media (max-width: 740px) {
+@media (max-width: 940px) {
   section {
     display: block;
     margin: 0 !important;
     padding: 0 !important;
     width: 100%;
     box-sizing: border-box; }
-    section .doctor-box, section .procedure-box {
+    section .doctor-box {
       width: 80%;
       min-width: 320px;
-      margin: 5% 10%; } }
+      margin: 5% 10%; }
+    section .doctor-box:first-child {
+      margin-left: 10%; }
+    section .doctor-box:last-child {
+      float: left;
+      margin-left: 10%;
+      margin-top: 20px; } }
+@media (max-width: 740px) {
+  section.program-section {
+    display: block;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100%;
+    box-sizing: border-box; }
+    section.program-section .procedure-box {
+      width: 60%;
+      min-width: 320px;
+      margin: 0 20% 0 20%; }
+    section.program-section .procedure-box:first-child {
+      margin-left: 20%; }
+    section.program-section .procedure-box:last-child {
+      float: left;
+      margin-left: 20%;
+      margin-top: 20px; } }
 
 /*# sourceMappingURL=default.css.map */
